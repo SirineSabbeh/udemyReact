@@ -16,20 +16,39 @@ function App() {
      `${firstName} ${lastName}`;
   const detailInputox = <input placeholder={inputplacholder} autoComplete />*/
 
-  const myObj={
+  const myObj=[{
     Title :'Blog Title 1',
     description :'Lorem Ipsum Dolor Lorem Ipsum Dolor Lorem Ipsum Dolor Lorem Ipsum Dolor Lorem Ipsum Dolor Lorem Ipsum Dolor Lorem Ipsum Dolor Lorem Ipsum'
 
-  }
-  const styles={
-    margin :"16px",
-    padding :"16px" ,
-    boxShadow: '0 2px 5px #ccc',
-    boxSizing:"border-box" ,
-    borderRadius:"5px"
-  }
-  
+  },
+  {
+    Title :'Blog Title 2',
+    description :'Lorem Ipsum Dolor Lorem Ipsum Dolor Lorem Ipsum Dolor Lorem Ipsum Dolor Lorem Ipsum Dolor Lorem Ipsum Dolor Lorem Ipsum Dolor Lorem Ipsum'
 
+  },
+  {
+    Title :'Blog Title 3',
+    description :'Lorem Ipsum Dolor Lorem Ipsum Dolor Lorem Ipsum Dolor Lorem Ipsum Dolor Lorem Ipsum Dolor Lorem Ipsum Dolor Lorem Ipsum Dolor Lorem Ipsum'
+
+  },
+  {
+    Title :'Blog Title 4',
+    description :'Lorem Ipsum Dolor Lorem Ipsum Dolor Lorem Ipsum Dolor Lorem Ipsum Dolor Lorem Ipsum Dolor Lorem Ipsum Dolor Lorem Ipsum Dolor Lorem Ipsum'
+
+  }];
+  const blocgard = myObj.map((item,pos) =>{
+    console.log(item);
+
+    return (
+      <div className="Blockgrid" key={item.id}>
+       <h3>{item.Title}</h3>
+       <p>{item.description}</p>
+
+      </div>
+
+    )
+  })
+  
   return (
     <div className="App">
     {/* <h3>fullName :{getFullName(firstName,lastName)}</h3>
@@ -41,25 +60,8 @@ function App() {
      <br/>
      { arr[0]>0 ? "True" : "False"}
       */}
-      <div style={styles}>
-        <h3>{myObj.Title}</h3>
-        <p>{myObj.description}</p>
-      </div>
-      <hr></hr>
-      <div style={styles}>
-        <h3>{myObj.Title}</h3>
-        <p>{myObj.description}</p>
-      </div>
-      <hr></hr>
-      <div style={styles}>
-        <h3>{myObj.Title}</h3>
-        <p>{myObj.description}</p>
-      </div>
-      <hr></hr>
-      <div style={styles}>
-        <h3>{myObj.Title}</h3>
-        <p>{myObj.description}</p>
-      </div>
+     {blocgard}
+    
     </div>
   );
 }
